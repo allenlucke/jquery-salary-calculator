@@ -52,12 +52,12 @@ function calcTotalMonthlySalary(){
 
 function checkTotalMonthlySalary(totalMonthlySalary){
     if(totalMonthlySalary <= maxTotalMonthlySalary){
-        $('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
+        $('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary.toFixed(2)}`);
         }
         else{
             let el = $( '.js-monthlySalary' );
             el.empty();
-            $('.js-monthlySalary').append(`<p class="js-monthlySalary css-overBudgetRed">Total Monthly Salary: $${totalMonthlySalary}</p>`);
+            $('.js-monthlySalary').append(`<p class="js-monthlySalary css-overBudgetRed">Total Monthly Salary: $${totalMonthlySalary.toFixed(2)}</p>`);
         };
 }; // Checks to see if the total monthly salary is greater than the maximum monthly salary, gives it a red background if it is.
 
