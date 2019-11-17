@@ -3,7 +3,7 @@ $(document).ready(init);
 const listOfEmployees = [];
 let totalMonthlySalary = 0;
 const monthsInAYear = 12;
-const maxTotalMonthlySalary = 20000;
+let maxTotalMonthlySalary = 20000;
 
 function init() {
     $('#submitNewEmployeeButton').on('submit', addEmployee);

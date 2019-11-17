@@ -14,7 +14,7 @@ A 'Submit' button should collect the form information, store the information to 
 Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
 
 ### Files Provided
-No files have been provided. Fork and clone this repository or create a new GitHub repository to get started. Make sure to commit regularily!
+No files have been provided. Fork and clone this repository or create a new GitHub repository to get started. Make sure to commit regularly!
 
 ### Wireframe
 
