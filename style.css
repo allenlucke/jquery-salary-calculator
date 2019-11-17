@@ -9,6 +9,7 @@ table{
 
 tr{
     background-color: cadetblue;
+    font-size: 24px;
 }
 
 h1{
@@ -21,8 +22,16 @@ form{
     text-align: center;
 }
 
+input{
+    padding: 8px 20px;
+}
+button{
+    padding: 8px 20px;
+    background-color: chartreuse;
+}
 .css-totalSalary{
-    font-size: 24px;
+    text-align: center;
+    font-size: 42px;
 }
 
 .css-overBudgetRed{

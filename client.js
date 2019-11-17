@@ -74,12 +74,11 @@ function render(){
                 <td>${employee.lastName}</td>
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
-                <td>${employee.annualSalary}</td>
+                <td>$${employee.annualSalary}</td>
                 <td><button class="js-delete-button">Delete Employee</button></td>
             </tr>  
         `);
     }
     checkTotalMonthlySalary(totalMonthlySalary);
-    //$('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
 }; //Renders the view
 
