@@ -1,0 +1,21 @@
+body{
+    //background-color: blue;
+}
+
+table{
+    width: 100%;
+}
+
+tr{
+    background-color: cadetblue;
+}
+
+h1{
+    text-align: center;
+    background-color: cadetblue;
+    font-size: 60px;;
+}
+
+form{
+    text-align: center;
+}
