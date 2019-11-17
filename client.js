@@ -3,11 +3,13 @@ $(document).ready(init);
 const listOfEmployees = [];
 let totalMonthlySalary = 0;
 const monthsInAYear = 12;
+const maxTotalMonthlySalary = 20000;
 
 function init() {
     console.log(`hi`);
     $('#submitNewEmployeeButton').on('submit', addEmployee);
     $('.js-clear-button').on('click', emptyNewEmployeeInputs);
+    $('.js-displayedListOfEmployees').on('click','.js-delete-button', deleteEmployee)
 };
 
 function addEmployee(event){
@@ -37,15 +39,23 @@ function emptyNewEmployeeInputs(){
 }; //Clears form inputs
 
 function deleteEmployee(){
-
-};
+    const id = $(this).parent().data('id');
+    listOfEmployees.splice(id, 1);
+    render();
+}; //Deletes an employee
 
 function calcTotalMonthlySalary(){
     totalMonthlySalary = 0;
     for(let employee of listOfEmployees) {
         totalMonthlySalary += (employee.annualSalary / monthsInAYear);
+
+        checkTotalMonthlySalary(totalMonthlySalary)
     }
 }; //Calculates Total Monthly Salary
+
+function checkTotalMonthlySalary(totalMonthlySalary){
+    console.log(totalMonthlySalary);
+};
 
 function render(){
     $('.js-displayedListOfEmployees').empty();
@@ -66,5 +76,5 @@ function render(){
         `);
     }
     $('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
-};
+}; //Renders the view
 

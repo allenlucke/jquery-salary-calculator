@@ -1,9 +1,10 @@
 body{
-    //background-color: blue;
+    background-image: url("https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
 
 table{
     width: 100%;
+    text-align: center;
 }
 
 tr{
@@ -18,4 +19,12 @@ h1{
 
 form{
     text-align: center;
+}
+
+.css-totalSalary{
+    font-size: 24px;
+}
+
+#css-overBudgetRed{
+    background-color: red;
 }
