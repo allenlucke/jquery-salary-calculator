@@ -48,14 +48,12 @@ function calcTotalMonthlySalary(){
     totalMonthlySalary = 0;
     for(let employee of listOfEmployees) {
         totalMonthlySalary += (employee.annualSalary / monthsInAYear);
-
-        checkTotalMonthlySalary(totalMonthlySalary)
     }
 }; //Calculates Total Monthly Salary
 
-function checkTotalMonthlySalary(totalMonthlySalary){
-    console.log(totalMonthlySalary);
+/*function checkTotalMonthlySalary(totalMonthlySalary){
 };
+*/
 
 function render(){
     $('.js-displayedListOfEmployees').empty();
@@ -75,6 +73,16 @@ function render(){
             </tr>  
         `);
     }
-    $('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
+    if(totalMonthlySalary <= maxTotalMonthlySalary){
+        $('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
+        }
+        else{
+            let el = $( '.js-monthlySalary' );
+            el.empty();
+            $('.js-monthlySalary').append(`<p class="js-monthlySalary css-overBudgetRed">Total Monthly Salary: $${totalMonthlySalary}</p>`);
+        console.log('wtf');
+        };
+        console.log(totalMonthlySalary);
+    //$('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
 }; //Renders the view
 
