@@ -6,7 +6,6 @@ const monthsInAYear = 12;
 const maxTotalMonthlySalary = 20000;
 
 function init() {
-    console.log(`hi`);
     $('#submitNewEmployeeButton').on('submit', addEmployee);
     $('.js-clear-button').on('click', emptyNewEmployeeInputs);
     $('.js-displayedListOfEmployees').on('click','.js-delete-button', deleteEmployee)
@@ -51,9 +50,16 @@ function calcTotalMonthlySalary(){
     }
 }; //Calculates Total Monthly Salary
 
-/*function checkTotalMonthlySalary(totalMonthlySalary){
-};
-*/
+function checkTotalMonthlySalary(totalMonthlySalary){
+    if(totalMonthlySalary <= maxTotalMonthlySalary){
+        $('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
+        }
+        else{
+            let el = $( '.js-monthlySalary' );
+            el.empty();
+            $('.js-monthlySalary').append(`<p class="js-monthlySalary css-overBudgetRed">Total Monthly Salary: $${totalMonthlySalary}</p>`);
+        };
+}; // Checks to see if the total monthly salary is greater than the maximum monthly salary, gives it a red background if it is.
 
 function render(){
     $('.js-displayedListOfEmployees').empty();
@@ -73,16 +79,7 @@ function render(){
             </tr>  
         `);
     }
-    if(totalMonthlySalary <= maxTotalMonthlySalary){
-        $('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
-        }
-        else{
-            let el = $( '.js-monthlySalary' );
-            el.empty();
-            $('.js-monthlySalary').append(`<p class="js-monthlySalary css-overBudgetRed">Total Monthly Salary: $${totalMonthlySalary}</p>`);
-        console.log('wtf');
-        };
-        console.log(totalMonthlySalary);
+    checkTotalMonthlySalary(totalMonthlySalary);
     //$('.js-monthlySalary').text(`Total Monthly Salary: $${totalMonthlySalary}`);
 }; //Renders the view
 
